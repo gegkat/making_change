@@ -4,3 +4,6 @@ Inspired by the mathologer video "Explaining the bizarre pattern in making chang
 Youtube link: https://www.youtube.com/watch?v=VLbePGBOVeg&t=1s
 
 My solution uses dynamic programming based on the well known "Unbounded knapsack problem" https://en.wikipedia.org/wiki/Knapsack_problem. This allows us to calculate the number of ways to calculate change for X cents with K coins in O(XK) time. The space used is also O(KL) where L is the largest coin denomination. 
+
+"coins.py" contains the code used to generate solutions. 
+"results.txt" contains solutions. The first column is the number of cents for which to make change. The second column is the number of ways to make change for that amount. The third column is the time it took in seconds to calculate solutions from the previous row up to the current row. 

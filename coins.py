@@ -42,7 +42,7 @@ def method(coins, target, pickle_file=None):
   if pickle_file:
     p = pickle.load( open( pickle_file, "rb" ) )
     table = p['table']
-    i = p['i'] + 1
+    i = p['i'] + coins[1]
   else:
     table = initialize(coins, target)
     i = coins[1]

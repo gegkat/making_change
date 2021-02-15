@@ -3,7 +3,7 @@ import pickle
 
 coins = [1, 5, 10, 25, 50, 100]
 target = int(1e20)
-step = int(1e7)
+step = int(1e8)
 # coins = [1,2, 10]
 # target = 3
 
@@ -19,7 +19,7 @@ def iter(table, coins, target, start, end):
       table[row][j] = table[row][j-1] + table[shift][j]
 
   i = end - coins[1]
-  fname = "coins2.p".format(i)
+  fname = "coins.p".format(i)
   pickle.dump({"i": i, "table": table}, open( fname, "wb" ) )
   duration = time.time() - t_start
   print(i, ":", table[i%L][-1], round(10*duration)/10, flush=True)
@@ -55,4 +55,4 @@ def method(coins, target, pickle_file=None):
   print(table[target % L][-1])
 
 # method(coins, target)
-method(coins, target, "coins2.p")
+method(coins, target, "coins.p")
